@@ -29,7 +29,7 @@ Deliver interactive dashboards and detailed analytics to support the following b
 
 ## 🧠 Insights (to be updated)
 
-> This section will be populated after Power BI and Python analysis is completed.
+> This section will be updated after Power BI and Python analysis would be completed.
 
 ---
 

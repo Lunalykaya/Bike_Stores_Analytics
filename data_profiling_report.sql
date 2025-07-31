@@ -44,4 +44,24 @@ order by sum(sales.order_items.quantity) desc;
 select sales.staffs.email, sales.staffs.active
 from sales.staffs;
 
-/*посмотреть есть ли такие продаваны которые ничего не продали*/
+/*After identifying top-performing staff, I noticed some staff had no sales at all.
+  To include them in the results, I use LEFT JOIN and COALESCE to show zero sales.*/
+
+select sales.staffs.staff_id, coalesce(sum(sales.order_items.quantity), 0) as sold_units, sales.staffs.manager_id, sales.staffs.active, sales.staffs.first_name, sales.staffs.last_name, sales.staffs.store_id, sales.stores.store_name 
+from sales.staffs
+left join sales.orders
+on sales.staffs.staff_id = sales.orders.staff_id
+left join sales.order_items
+on sales.orders.order_id = sales.order_items.order_id
+inner join sales.stores
+on sales.staffs.store_id = sales.stores.store_id
+group by sales.staffs.staff_id, sales.staffs.manager_id, sales.staffs.active, sales.staffs.first_name, sales.staffs.last_name, sales.staffs.store_id, sales.staffs.first_name, sales.staffs.last_name, sales.staffs.store_id, sales.stores.store_name 
+order by sum(sales.order_items.quantity) 
+
+/*stores*/
+select s.store_id, s.store_name, s.city, COALESCE(SUM(oi.quantity * oi.list_price * (1 - oi.discount)), 0) as total_revenue
+from sales.stores s
+left join sales.orders o on s.store_id = o.store_id
+left join sales.order_items oi on o.order_id = oi.order_id
+group by s.store_id, s.store_name, s.city
+order by total_revenue desc;

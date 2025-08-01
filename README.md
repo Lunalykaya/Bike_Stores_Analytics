@@ -22,7 +22,7 @@ Deliver interactive dashboards and detailed analytics to support the following b
 | Tool       | Goal                          |
 |------------|----------------------------------|
 | SQL       | [Create a flat, analysis-ready fact table using joins](https://github.com/Lunalykaya/Bike_Stores_Analytics/blob/main/Data_Mart_sales.sql)  <br> [Performed initial data profiling(brands, customers, sales staff)](https://github.com/Lunalykaya/Bike_Stores_Analytics/blob/main/data_profiling_report.sql)|
-| Power BI   | Build an interactive dashboard for business stakeholders            |
+| Power BI   | [Build an interactive dashboard for business stakeholders](https://github.com/Lunalykaya/Bike_Stores_Analytics/blob/main/dashboard_bike_store.pbix)            |
 | Jupyter Notebook    | Perform further analysis and answer deeper questions |
 
 ---

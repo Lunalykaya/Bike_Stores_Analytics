@@ -43,7 +43,7 @@ Deliver interactive dashboards and detailed analytics to support the following b
 ## ✅ Status
 
 - ✅ SQL data model built  
-- 🔲 Power BI dashboard to follow
+- ✅ Power BI dashboard to follow
 - 🔲 Python EDA to follow
 
 
